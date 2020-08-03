@@ -1,0 +1,48 @@
+.tabChats-enter {
+  position: absolute;
+  transform: translateX(-200%);
+}
+.tabChats-enter-active {
+  transform: translateX(0%);
+  transition: all 0.3s ease;
+}
+.tabChats-exit {
+  position: absolute;
+}
+.tabChats-exit-active {
+  transform: translateX(-200%);
+  transition: all 0.3s ease;
+}
+
+.tabContacts-enter {
+  position: absolute;
+  transform: translateX(200%);
+}
+.tabContacts-enter-active {
+  transform: translateX(0%);
+  transition: all 0.3s ease;
+}
+.tabContacts-exit {
+  position: absolute;
+}
+.tabContacts-exit-active {
+  transform: translateX(200%);
+  transition: all 0.3s ease;
+}
+
+.modal-enter {
+  transform: scale(0.5);
+  opacity: 0;
+}
+.modal-enter-active {
+  transform: scale(1);
+  transition: all 0.2s cubic-bezier(0, 0.96, 1, 1.01);
+  opacity: 1;
+}
+.modal-exit {
+}
+.modal-exit-active {
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.2s cubic-bezier(0, 0.96, 1, 1.01);
+}

@@ -1,0 +1,118 @@
+.account {
+  display: flex;
+  flex: 1;
+  background: #fff;
+  margin: 1rem;
+  position: relative;
+}
+
+@media screen and (max-width: 1000px) {
+  .account {
+    flex-direction: column;
+    flex: none;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  .profilePicture {
+    border-right: none !important;
+  }
+  .accountData {
+    padding-left: 0rem !important;
+  }
+
+  .section h2 {
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .section h2::before {
+    border: none !important;
+  }
+}
+
+.profilePicture {
+  width: 250px;
+  border-right: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  .picturePlaceholder {
+    width: 200px;
+    height: 200px;
+  }
+
+  .uploadBtn {
+    margin-top: 1rem;
+  }
+}
+
+.accountData {
+  flex: 1;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  h2 {
+    font-size: 2.125rem;
+    font-weight: 400;
+    color: #444444;
+  }
+
+  .userName {
+    margin-bottom: 1rem;
+    h2 {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      font-weight: 500;
+    }
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    max-width: 30rem;
+    margin: 2rem 0;
+
+    svg {
+      margin-right: 1rem;
+      fill: #b9b9b9;
+    }
+    h6,
+    p {
+      margin-bottom: 0;
+      color: #444444;
+    }
+    h6 {
+      font-weight: 500;
+    }
+    div {
+      flex: 1;
+    }
+  }
+
+  .section {
+    margin: 3rem 0;
+    h2 {
+      position: relative;
+      font-weight: 400;
+      font-size: 1.8rem !important;
+
+      &::before {
+        content: '';
+        width: calc(100% + 2rem);
+        position: absolute;
+        bottom: 0;
+        margin-left: -1.5rem;
+        right: 0;
+        border-bottom: 1px solid #e6e6e6;
+      }
+    }
+    p {
+      margin-bottom: 1rem;
+      span {
+        font-weight: 500;
+        display: inline-block;
+        width: 7rem;
+      }
+    }
+  }
+}

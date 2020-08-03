@@ -1,0 +1,248 @@
+.sideBar {
+  background-color: #43425d;
+  width: 21rem;
+  min-width: 21rem;
+  max-width: 21rem;
+  max-height: 100vh;
+  height: 100%;
+  position: fixed;
+  z-index: 800;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  flex: 0 0;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 800px) {
+    transition: left 0.25s;
+    box-shadow: 2px 0 1rem #999;
+    &.open {
+      left: 0 !important;
+    }
+    left: -350px;
+  }
+
+  .header {
+    background-color: #6f6fc9;
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      margin-left: 1.25rem;
+      fill: #b5b5ff;
+    }
+    h1 {
+      font-size: 1.3rem;
+      color: #f9f9fe;
+      font-weight: 500;
+      margin-left: 0.8rem;
+      margin-bottom: 0;
+    }
+
+    .menuBtn {
+      position: relative;
+      margin-right: 1.25rem;
+      display: flex;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 990;
+
+      &:focus,
+      &:active {
+        outline: none;
+        background: transparent;
+      }
+
+      &:hover svg {
+        fill: #e9e9f8;
+      }
+      svg {
+        fill: #cecde9;
+      }
+    }
+  }
+
+  .menu {
+    position: relative;
+    z-index: 888;
+
+    .items {
+      margin-top: 0.6rem;
+      display: flex;
+      justify-content: stretch;
+      border-bottom: 2px solid #3c3b54;
+
+      $item-color: #a4a2d5;
+      $item-color-svg: #6f6fc9;
+
+      $item-color-selected: #f66f94;
+
+      > :nth-child(1) {
+        flex-basis: 48%;
+      }
+      > :nth-child(2) {
+        flex-basis: 52%;
+      }
+
+      a.item {
+        text-align: center;
+        padding: 0.7rem 1rem;
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: $item-color;
+        display: flex;
+        justify-content: center;
+        transition: all 0.3s ease;
+        &:hover {
+          color: lighten($item-color, 5);
+          &::after {
+            background-color: lighten($item-color, 5);
+          }
+          svg {
+            fill: lighten($item-color-svg, 5);
+          }
+        }
+
+        &.active {
+          position: relative;
+          color: $item-color-selected;
+
+          svg {
+            fill: $item-color-selected;
+          }
+        }
+        svg {
+          fill: $item-color-svg;
+          transition: all 0.3s ease;
+          margin-right: 1rem;
+        }
+      }
+
+      .itemBorder {
+        position: absolute;
+        background-color: $item-color-selected;
+        height: 3px;
+        width: 0;
+        bottom: 0px;
+        left: 0;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  .search {
+    margin: 0.8rem 1rem;
+    input {
+      border: none;
+      background-color: #595878;
+      line-height: 2.8rem;
+      padding: 0 1rem;
+      border-radius: 5px;
+      width: 100%;
+      color: #cdd1ee;
+
+      &::placeholder {
+        color: #9291b4;
+      }
+    }
+  }
+
+  .newBtn {
+    position: absolute;
+    bottom: 0;
+    width: 19rem;
+    cursor: pointer;
+    height: 3rem;
+    margin: 1rem;
+    background-color: #6f6e8e;
+    color: #cdd1ee;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #767595;
+    }
+  }
+
+  .content {
+    transition: all 0.3s ease;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto !important;
+    flex-grow: 1;
+    max-height: calc(100vh - 8.4rem);
+
+    .loadingMsg {
+      width: 100%;
+      height: 2rem;
+      font-size: 1rem;
+      margin-top: 5rem;
+      color: #b5b5ff;
+      z-index: 777;
+      top: 20rem;
+      text-align: center;
+      user-select: none;
+    }
+
+    h5 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #9695b4;
+      margin: 1.25rem;
+    }
+    .chats {
+      display: flex;
+      flex-direction: column;
+
+      .chat {
+        display: flex;
+        flex: 1 0;
+        align-items: center;
+        border-bottom: 1px solid #393851;
+        transition: background-color 0.2s ease-in-out;
+        cursor: pointer;
+
+        .avatar {
+          margin: 0 1rem;
+        }
+        .texts {
+          padding: 0.8rem 0;
+          margin-right: 1rem;
+          position: relative;
+          height: 5rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          h6 {
+            color: #cdd1ee;
+            margin-bottom: 0;
+            font-size: larger;
+          }
+          p {
+            overflow: hidden;
+            color: #9695b4;
+            width: 15.6rem;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+        &:hover,
+        &.active {
+          background-color: #4e4d69;
+        }
+      }
+      & > :first-child {
+        border-top: 1px solid #393851;
+      }
+    }
+  }
+}

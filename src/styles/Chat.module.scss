@@ -1,0 +1,140 @@
+.chat {
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex: 1;
+
+  .chatPane {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: flex-start;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+
+    .message {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      padding-bottom: 1rem;
+      @media screen and (min-width: 1000px) {
+        max-width: 50%;
+      }
+
+      &.friend {
+        .text {
+          background-color: #5c57d7;
+          align-items: flex-start;
+          color: #fff;
+        }
+      }
+      &.me {
+        align-self: flex-end;
+
+        .avatar {
+          order: 1;
+          flex-shrink: 0;
+        }
+        .text {
+          background-color: #e1e1e1;
+          color: #222;
+
+          .timestamp {
+            left: 0;
+            text-align: left;
+            padding-left: 0.6rem;
+          }
+        }
+      }
+
+      .text {
+        border-radius: 25px;
+        margin: 0.2rem 0.3rem;
+        padding: 0.8rem 1.2rem;
+        position: relative;
+        font-size: 1rem;
+
+        .timestamp {
+          position: absolute;
+          font-size: 0.7rem;
+          bottom: -1.2rem;
+          right: 0;
+          color: #333;
+          min-width: 5.4rem;
+          text-align: right;
+          padding-right: 0.6rem;
+        }
+      }
+    }
+  }
+
+  .chatBar {
+    align-self: stretch;
+    margin: 2rem;
+    position: sticky;
+    bottom: 2rem;
+    .messageInput {
+      display: flex;
+      align-items: center;
+      position: relative;
+      border-radius: 100px;
+      background-color: #fff;
+      box-shadow: 0 0 8px rgb(226, 226, 226);
+      justify-content: space-evenly;
+      input {
+        background-color: transparent;
+        border: none;
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: #333;
+        flex: 1;
+        line-height: 56px;
+        padding: 0 2rem;
+        &::placeholder {
+          font-weight: 400;
+          color: #aaa;
+        }
+      }
+      .sendBtn {
+        display: flex;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        margin-right: 0.8rem;
+        padding: 0.5rem;
+
+        $send-btn-bg-color: #5c57d7;
+        &:hover {
+          transform: scale(1.2);
+          svg {
+            fill: lighten($send-btn-bg-color, 2%);
+          }
+        }
+        &:active {
+          svg {
+            fill: darken($send-btn-bg-color, 4%);
+          }
+        }
+        svg {
+          fill: $send-btn-bg-color;
+        }
+      }
+    }
+  }
+}
+
+.noChat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8rem;
+  padding: 2rem;
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #999;
+    text-align: center;
+  }
+}

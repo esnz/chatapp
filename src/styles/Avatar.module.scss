@@ -1,0 +1,68 @@
+.avatar {
+  vertical-align: middle;
+  position: relative;
+
+  .status {
+    background-color: green;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #fff;
+    right: 0;
+    bottom: 0;
+    border-radius: 50px;
+    position: absolute;
+  }
+
+  img,
+  svg {
+    border-radius: 100px;
+    display: block;
+  }
+
+  &.normal img,
+  &.normal .placeholder {
+    width: 42px;
+    height: 42px;
+  }
+  &.large img,
+  &.large .placeholder {
+    width: 64px;
+    height: 64px;
+  }
+  &.xlarge img,
+  &.xlarge .placeholder {
+    width: 116px;
+    height: 116px;
+  }
+  &.small img,
+  &.small .placeholder {
+    width: 32px;
+    height: 32px;
+  }
+
+  .a {
+    fill: #dfa860;
+  }
+  .b {
+    fill: #fff;
+    font-size: 25px;
+    font-family: Poppins-Regular, Poppins;
+    user-select: none;
+  }
+
+  .placeholder {
+    border-radius: 100px;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: orange;
+    width: 42px;
+    height: 42px;
+    span {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+  }
+}

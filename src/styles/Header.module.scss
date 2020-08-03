@@ -1,0 +1,46 @@
+.header {
+  background-color: #fff;
+  height: 4.5rem;
+  min-height: 4.5rem;
+  box-shadow: 5px 0 8px #d8d8d8;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 700;
+
+  .hamburger {
+    margin-right: 1rem;
+    @media screen and (min-width: 800px) {
+      display: none;
+    }
+
+    button {
+      display: flex;
+      border: none;
+      cursor: pointer;
+      background-color: #fff;
+
+      & svg {
+        fill: #222 !important;
+        transition: all 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      &:hover svg {
+        transform: scaleY(1.1);
+      }
+    }
+  }
+
+  h6 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    color: #444;
+    margin-left: 0.5rem;
+  }
+  svg {
+    fill: #646382;
+    margin-right: 0rem;
+  }
+}

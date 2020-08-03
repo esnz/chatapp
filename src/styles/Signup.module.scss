@@ -1,0 +1,82 @@
+.card {
+  width: 1000px;
+  margin: 5rem 0;
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  label {
+    display: inline-block;
+  }
+
+  .main {
+    display: flex;
+    justify-content: space-between;
+
+    .accountDetails {
+      input {
+        width: 25rem;
+      }
+    }
+
+    .profilePicture {
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+
+      a {
+        margin-top: 1rem;
+        font-weight: 500;
+        color: #35759d;
+      }
+    }
+  }
+
+  .personalInfo {
+    input {
+      width: 25rem;
+    }
+  }
+
+  .btns {
+    margin-top: 3rem;
+  }
+
+  @media (max-width: 1000px) {
+    width: 800px;
+  }
+
+  @media (max-width: 800px) {
+    margin: 1rem;
+    width: 100%;
+    input {
+      width: 100% !important;
+    }
+    button {
+      width: 100% !important;
+    }
+    .main {
+      flex-direction: column;
+
+      .accountDetails {
+        order: 2;
+      }
+
+      .profilePicture {
+        order: 1;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  .picturePlaceholder {
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    background-image: url('../assets/profile_picture_placeholder.svg');
+    background-size: cover;
+  }
+}

@@ -1,0 +1,68 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.card {
+  width: 32rem;
+  padding-bottom: 3rem;
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    svg {
+      fill: #383291;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 500;
+      color: #282738;
+      margin-bottom: 2rem;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    width: 24rem;
+  }
+}
+
+.errorMsg {
+  color: #c41a1a;
+  margin-bottom: 5px;
+}
+
+.loginForm {
+  input {
+    width: 100%;
+    border: 1px solid transparent !important;
+  }
+
+  .btns {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      color: #43425d;
+      margin-top: 1rem;
+      a {
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.copyright {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 0.8rem;
+  bottom: 0;
+  padding: 1rem;
+  color: #646393;
+}
