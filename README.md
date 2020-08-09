@@ -4,7 +4,7 @@ A realtime chat application created with React & Firebase
 
 [Live Demo](http://chatapp-esn.web.app 'Live Demo')
 
-## Tech Stacks
+## Tech Stack
 
 React, Typescript, Mobx, Firebase
 
